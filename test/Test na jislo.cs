@@ -34,4 +34,3 @@ void RandomMassive()
     Console.ReadLine();
 }
 
-Console.WriteLine(RandomMassive());
