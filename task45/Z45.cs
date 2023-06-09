@@ -3,15 +3,19 @@
 
 Console.Clear ();
 
-int Prompt (string msg)
+int Prompt(string message)  //Проверка на число
 {
-    Console.Write(msg);
-    string value = Console.ReadLine();
-    if ((int.TryParse(value, out int val)) == false)
+    Console.Write(message);
+    string num = Console.ReadLine()!;
+    bool realNum = int.TryParse(num, out int numInt);
+    while (realNum == false)
     {
-        Console.WriteLine("Это не число ");
+        Console.WriteLine("Это не число!");
+        Console.Write(message);
+        num = Console.ReadLine()!;
+        realNum = int.TryParse(num, out numInt);
     }
-    return val;
+    return numInt;
 }
 
 int[] CreateRandomMassive(int val)
