@@ -32,9 +32,9 @@ void PointIntersection(double b1, double k1, double b2, double k2)
     }
     else
     {
-        int x = (b2 - b1) / (k1 - k2);
-        int y = k1 * x + b1;
-        Console.WriteLine($"Функции пересекаются в точке ({x}, {y}");
+        double x = (b2 - b1) / (k1 - k2);
+        double y = k1 * x + b1;
+        Console.WriteLine($"Функции пересекаются в точке ({x}, {y})");
     }
 }
 
@@ -42,5 +42,5 @@ double b1 = Prompt("Введите точку b1: ");
 double k1 = Prompt("Введите точку к1: ");
 double b2 = Prompt("Введите точку b2: ");
 double k2 = Prompt("Введите точку к2: ");
-
+PointIntersection(b1, k1, b2, k2);
 
