@@ -42,7 +42,8 @@ void GetElemArray(int[,] array)
 {
     int row = Prompt("Введите первый индекс: ");
     int col = Prompt("Введите второй индекс: ");
-    if (row > array.GetLength(0) || col > array.GetLength(1))
+  
+    if (row > array.GetLength(0) - 1 || col > array.GetLength(1) - 1)
     {
         Console.WriteLine("Такого элемента в массиве нет");
     }
