@@ -1,33 +1,6 @@
-﻿
-void PrintArray(int[,] matr)
-{
-    for (int i = 0; i < matr.GetLength(0); i++)
-    {
-        for (int j = 0; j < matr.GetLength(1); j++)
-        {
-            Console.Write($"{matr[i, j]} ");
-        }
-        Console.WriteLine();
-    }
-}
-
-void FillArray(int[,] matr)
-{
-    for (int i = 0; i < matr.GetLength(0); i++)
-    {
-        for (int j = 0; j < matr.GetLength(1); j++)
-        {
-            matr[i, j] = new Random().Next(1, 10);
-        }
-    }
-}
-
-// int[,] matrix = new int[3, 4];
-// PrintArray(matrix);
-// FillArray(matrix);
-// Console.WriteLine();
-// PrintArray(matrix);
-
+﻿// Сформируйте трёхмерный массив из неповторяющихся двузначных чисел.
+//  Напишите программу, которая будет построчно выводить массив, 
+//  добавляя индексы каждого элемента.
 
 void PrintArray1(int[,,] matr)
 {
@@ -49,14 +22,11 @@ void FillArray1(int[,,] matr)
     int[] arr = new int[matr.GetLength(0) * matr.GetLength(1) * matr.GetLength(2)];
     for (int i = 0; i < arr.Length; i++)
     {
-        int temp = new Random().Next(1, 100);
-        foreach (int item in arr)
-        {
-            if (item == temp)
+        int temp = new Random().Next(1, 9);       //Проверка что число оригинальное
+        while (Array.IndexOf(arr, temp) != -1)    
             {
-                temp = new Random().Next(1, 100);  
+                temp = new Random().Next(1, 9);  
             }
-        }
         arr[i] = temp;        
     }
     for (int i = 0; i < matr.GetLength(0); i++)
@@ -72,7 +42,7 @@ void FillArray1(int[,,] matr)
     }
 }
 
-int[,,] martix = new int[3, 3, 3];
+int[,,] martix = new int[2, 2, 2];
 // PrintArray1(martix);
 FillArray1(martix);
 Console.WriteLine();
